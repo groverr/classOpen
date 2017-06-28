@@ -1,8 +1,20 @@
 
-Meteor.publish('Entradas', function(){
+
+Meteor.publish('Entradas', function () {
 	return Entradas.find();
 });
 
-Meteor.publish('Comentarios', function(){
+Meteor.publish('Comentarios', function () {
 	return Comentarios.find();
+});
+
+Meteor.publish('EntradasByName', function (name) {
+	var entrada = Entradas.find({title:name});
+	return entrada;
+});
+
+Meteor.publish('ComentariosByName', function (name) {
+	var entrada = Entradas.findOne({title:name});
+	var comentarios = Comentarios.find({entrada_id:entrada._id});
+	return comentarios;
 });

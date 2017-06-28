@@ -4,7 +4,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					{{title}}
+					<a href="/entrada/{{title}}" class="no-link-entrada">{{title}}</a>
 					<span class="pull-right">
 						{{createdAtE createdAt}}
 					</span>
@@ -15,7 +15,7 @@
 					{{#if coments_num}}
 					<br>
 					<span class="pull-right">
-						<a href="#" role="button">{{coments_num}} comentarios</a>
+						<a href="/entrada/{{title}}" role="button">{{coments_num}} comentarios</a>
 					</span>
 					{{/if}}
 

@@ -1,7 +1,4 @@
 
-Meteor.subscribe('Entradas');
-Meteor.subscribe('Comentarios');
-
 
 
 Template.main.events({
