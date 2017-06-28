@@ -4,15 +4,15 @@
 /*.logo{
 	margin-left: 280px;
 }*/
-/*html{
+html{
 	position: relative;
 	min-height: 100%;
-}*/
+}
 
 body{
 	background-image: url(img/bedsheet.png);
 	font-family: 'Roboto', sans-serif;
-	/*margin-bottom: 210px;*/
+	margin-bottom: 210px;
 }
 
 .main{
