@@ -51,5 +51,8 @@ body{
 .panel-heading, .btn-search{
 	/*background-color: #af1d4e!important;*/
 	background-color: #993333!important;
+	/*background-color: #900c3f!important;*/
+	/*background-color: #862d4a!important;*/
 	color: white !important;
+	opacity: 0.9;
 }
