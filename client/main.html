@@ -79,22 +79,12 @@
               <div class="panel-body">
                 No hay entradas que mostrar...
 
-                <ul>
+                
                   {{#each entradas}}
-                  <li>
-                    Entrada con id {{title}} del usuario {{author_id}} n° comentarios {{coments_num}}
-                    <ol>
-                      {{#each comentarios _id}}
-                      <li>
-                        Comentario del autor {{author_id}}, con titulo {{title}} 
-                      </li>
-                      {{/each}}
-                    </ol>
-                    <br>
-                  </li> 
+                    {{>entrada}} 
                   {{/each}}
 
-                </ul>
+                
               </div>
             </div>
           </div>

@@ -1,4 +1,8 @@
 
+Meteor.subscribe('Entradas');
+Meteor.subscribe('Comentarios');
+
+
 
 Template.main.events({
 "click a#register":function(event,template){
