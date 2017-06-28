@@ -1,0 +1,193 @@
+
+
+<body>
+
+  {{>main}}
+  {{>content}}
+  
+</body>
+
+<template name="main">
+  <div class="container-fluid main">
+    <br>
+    <div class="logo">
+      <img class="img-square" src="/img/cog.png" alt="">
+    </div>
+    
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+        
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
+            <ul class="nav navbar-nav">
+          
+                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Demo</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        
+            <ul class="nav navbar-nav navbar-right">
+                {{#if currentUser}}
+
+                <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuario: {{currentUser.username}}</a></li>
+                <li><a href="#" data-toggle="modal" id="logout"><span class="fa fa-sign-out" aria-hidden="true"></span> Cerrar sesión</a></li>
+                
+                {{else}}
+
+                <li><a href="#" data-toggle="modal" id="login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Iniciar sesión</a></li>
+                <li><a href="#" data-toggle="modal" id="register"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Registro</a></li>
+                
+                {{/if}}
+              </ul>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+      
+      <h3>El único sistema de gestión del aprendizaje (LMS) que conecta a todas las personas, contenido y sistemas que alimentan la educación.</h3>
+      <br>
+      <p><em>Gestión de aprendizaje y gestión de la evaluación son finalmente parte del mismo sistema. Crea fácilmente evaluaciones alineadas a objetivos que se administran desde una ubicación central y se entregan en el flujo de trabajo normal del curso.</em></p>
+    </div>
+    
+  </div>
+</template>
+
+
+<template name="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="fa fa-clock-o" aria-hidden="true"></span> Ultimas entradas
+              </div>
+              <div class="panel-body">
+                No hay entradas que mostrar...
+
+                <ul>
+                  {{#each entradas}}
+                  <li>
+                    Entrada con id {{title}} del usuario {{author_id}} n° comentarios {{coments_num}}
+                    <ol>
+                      {{#each comentarios _id}}
+                      <li>
+                        Comentario del autor {{author_id}}, con titulo {{title}} 
+                      </li>
+                      {{/each}}
+                    </ol>
+                    <br>
+                  </li> 
+                  {{/each}}
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <span class="fa fa-search" aria-hidden="true"></span> Busqueda
+                </div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <input type="search" class="form-control" name="" value="" placeholder="Introduce texto a buscar...">
+                  </div>
+                  <button class="form-control btn-search" name="button">Buscar</button>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <span class="fa fa-filter" aria-hidden="true"></span> Filtro
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <span class="fa fa-calendar" aria-hidden="true"></span> Archivo
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--<div class="col-md-12">
+        
+          <div align="center">
+            <h2 id="about">What is classOpenGO?</h2>
+          </div>
+        
+      </div>
+      
+      
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <p><strong>Éxito Educativo</strong></p>
+              </div>
+              <div class="panel-body">
+                <h3>Adoptar un ecosistema de aprendizaje digital en todo el distrito</h3>
+                <p><em><strong>"Un grupo grande de adoptantes tempranos eran profesores que no siempre se habían sentido cómodos usando la tecnología en el aula. La escuela les ayudó a abrazar un ambiente de enseñanza y aprendizaje digital de nuevas maneras. "</strong></em></p>
+              </div>
+              <div class="panel-body">
+                
+                <div class="page_box_pic fl-lt" align="center"><img src="img/Students.jpg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <p>
+                    <strong>Definición del éxito en la Educación Superior</strong>
+                  </p>
+                </div>
+                <div class="panel-body">
+                  <h3>Responder a las necesidades de los estudiantes y de los educadores</h3>
+                  <p><em><strong>"Nuestros estudiantes estaban claros que querían una plataforma que fuera fácil de usar en cualquier dispositivo y lo suficientemente potente como para ser plenamente adoptado por todos los profesores para que hubiera sólo un LMS para todos sus cursos y actividades. Diseño intuitivo centrado en el alumno, su capacidad para apoyar nuestros métodos de enseñanza tradicionales y nuevos y sus fuertes capacidades de integración."</strong></em></p>
+                </div>
+                <div class="panel-body">
+                  
+                  <div class="page_box_pic fl-lt" align="center"><img src="img/educacion-distancia.jpg" alt=""></div>
+                </div>
+              </div>    
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</template>
+
+

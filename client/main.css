@@ -1,0 +1,55 @@
+/* CSS declarations go here */
+
+
+/*.logo{
+	margin-left: 280px;
+}*/
+/*html{
+	position: relative;
+	min-height: 100%;
+}*/
+
+body{
+	background-image: url(img/bedsheet.png);
+	font-family: 'Roboto', sans-serif;
+	/*margin-bottom: 210px;*/
+}
+
+.main{
+	background: #333;
+	/*color: #4169e1;*/
+}
+
+.img-square{
+	width: 80px;
+	height: 45px;
+	border-radius: 5px;
+}
+
+.navbar{
+	background-color: #333;
+	margin-bottom: 0px;
+}
+
+.navbar .nav >li >a{
+	color: white;
+}
+
+.navbar li a:hover, .navbar li a:active{
+	/*color: #9c1638 !important;*/
+	color: #862d4a !important;
+}
+
+.jumbotron{
+	color: #6b8e23;
+	text-align: center;
+	/*background-image: url('https://farm9.staticflickr.com/8573/15700312263_60fd816790_h.jpg');*/
+	background-image: url(img/homec.gif);
+	background-attachment: fixed;
+}
+
+.panel-heading, .btn-search{
+	/*background-color: #af1d4e!important;*/
+	background-color: #993333!important;
+	color: white !important;
+}
